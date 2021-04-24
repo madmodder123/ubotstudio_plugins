@@ -1,0 +1,26 @@
+plugin command("ExBrowser.dll", "ExBrowser CleanUp")
+set(#threadcounter,0,"Global")
+loop(20) {
+    loop while($comparison(#threadcounter,">= Greater than or equal to",5)) {
+        wait(0.1)
+    }
+    increment(#threadcounter)
+    LaunchThread()
+}
+loop while($comparison(#threadcounter,"> Greater than",0)) {
+    wait(0.1)
+}
+alert("Done")
+stop script
+divider
+divider
+divider
+define LaunchThread {
+    thread {
+        plugin command("ExBrowser.dll", "ExBrowser Launcher", "Chrome", "", "")
+        plugin command("ExBrowser.dll", "ExBrowser Navigate", "www.ebay.com")
+        wait(5)
+        plugin command("ExBrowser.dll", "ExBrowser Close")
+        decrement(#threadcounter)
+    }
+}

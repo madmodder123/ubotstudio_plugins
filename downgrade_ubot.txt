@@ -1,0 +1,8 @@
+Replace version number with desired version
+
+
+Ubot Installer:
+https://s3-us-west-2.amazonaws.com/ubotsupportfiles/6.1.8+Setup.msi
+
+Browser zip file:
+https://s3-us-west-2.amazonaws.com/ubotsupportfiles/6.1.8.zip
